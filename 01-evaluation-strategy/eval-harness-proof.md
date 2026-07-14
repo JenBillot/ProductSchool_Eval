@@ -24,23 +24,23 @@ Groundedness
 - Good: every claim traces back to something actually in Ascend's verified data.
 - Bad: sounds plausible but isn't actually sourced from the data.
 Completeness
-Good: comparative queries get proportionate coverage of every side asked about.
-Bad: only answers the easier half of the question and presents it as complete.
+- Good: comparative queries get proportionate coverage of every side asked about.
+- Bad: only answers the easier half of the question and presents it as complete.
 No unlabeled inference
-Good: synthesis or opinion is clearly flagged as IQ's own read, separate from observed fact.
-Bad: inference is blended in and stated as if it were fact.
+- Good: synthesis or opinion is clearly flagged as IQ's own read, separate from observed fact.
+- Bad: inference is blended in and stated as if it were fact.
 Calibrated uncertainty
-Good: thin, old, or conflicting data is flagged as such.
-Bad: a confident answer is given despite thin, old, or conflicting data.
+- Good: thin, old, or conflicting data is flagged as such.
+- Bad: a confident answer is given despite thin, old, or conflicting data.
 Sourcing
-Good: claims are traceable to a specific source doc/date so users can verify them.
-Bad: claims are correct but unsourced, so users can't check them.
+- Good: claims are traceable to a specific source doc/date so users can verify them.
+- Bad: claims are correct but unsourced, so users can't check them.
 Decision-usable structure
-Good: length and structure preserve the real distinctions the user needs to act on.
-Bad: brevity flattens the answer and erases meaningful differences.
+- Good: length and structure preserve the real distinctions the user needs to act on.
+- Bad: brevity flattens the answer and erases meaningful differences.
 Gut check (overall)
-Good: a VP could act on it and it would hold up if they checked the source data themselves.
-Bad: it looks trustworthy but falls apart the moment someone checks it against the source.
+- Good: a VP could act on it and it would hold up if they checked the source data themselves.
+- Bad: it looks trustworthy but falls apart the moment someone checks it against the source.
 
 ## Screenshots, links or repo paths (optional if you followed the demo)
 
