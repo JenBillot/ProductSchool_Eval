@@ -47,8 +47,3 @@ Decision-usable structure
 Gut check (overall)
 - Good: a VP could act on it and it would hold up if they checked the source data themselves.
 - Bad: it looks trustworthy but falls apart the moment someone checks it against the source.
-
-## Screenshots, links or repo paths (optional if you followed the demo)
-
-_…_
-
