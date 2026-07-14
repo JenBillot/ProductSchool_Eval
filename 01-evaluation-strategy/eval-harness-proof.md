@@ -21,8 +21,8 @@ Generate 20 example rows for evaluating email-summary quality. Each row: input e
 ## Your definition of good vs bad (golden-set criteria) — the graded part, write your own
 
 Groundedness
-Good: every claim traces back to something actually in Ascend's verified data.
-Bad: sounds plausible but isn't actually sourced from the data.
+- Good: every claim traces back to something actually in Ascend's verified data.
+- Bad: sounds plausible but isn't actually sourced from the data.
 Completeness
 Good: comparative queries get proportionate coverage of every side asked about.
 Bad: only answers the easier half of the question and presents it as complete.
