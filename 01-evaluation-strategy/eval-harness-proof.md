@@ -1,50 +1,48 @@
-# First LLM-as-a-Judge Eval — Module 1
+# First LLM-as-a-Judge Eval, Module 1
 
-> Module 1 · First Eval Lab · ★ Deliverable 2
->
-> How you wired your first eval harness — an LLM-as-a-Judge running over a dataset — and beat the cold start by seeding a starter dataset. Capture the **setup and your definition of "good"** here; the full scored run against a curated golden set comes later.
+## Version A, Concise, system prompt used
 
-## Version A — Concise (system prompt used)
-
-```text
 You are an executive briefing assistant.
 Summarize in exactly 3 bullet points under 60 words. No preamble, no extra text.
-```
 
-## Version B — Narrative (system prompt used)
+## Version B, Narrative, system prompt used
 
-```text
 You are a PR communications assistant.
 Write a 100-word narrative summary highlighting wins first, then risks and next steps. Keep a positive tone. No bullets.
-```
 
-## Eval setup — dataset name + judge model/family
+## Eval setup, dataset name + judge model/family
 
-_What dataset are you evaluating, which evaluator/metric, and which model judges it?_
+Used dataset Module1Output; choose a consiseness LLM as a Judge (choosing a different LLM model; I choose one of the 5.0 family of models) compared to the 4.0 family used for the original LLM set up
 
-> Example: dataset `Module1Output`, evaluator `Conciseness (LLM-as-a-Judge)`. Generator = a small model from Provider X; **judge = a small model from a different family (Provider Y)** to avoid self-preference bias.
+## Cold-start, the prompt you used to seed a starter dataset
 
-## Cold-start — the prompt you used to seed a starter dataset
+Generate 20 example rows for evaluating email-summary quality. Each row: input email + candidate summary + a first-pass label (good/bad) + one-line reason. Make ~half concise/faithful (good) and half verbose or inaccurate (bad). Return as a markdown table
 
-_You don't have production data yet. Paste the prompt you gave a chatbot to generate ~20 example rows so you can start evaluating today._
+## Your definition of good vs bad (golden-set criteria) — the graded part, write your own
 
-> Example: "Generate 20 example rows for evaluating email-summary quality. Each row: input email + candidate summary + a first-pass label (good/bad) + one-line reason. Make ~half concise/faithful (good) and half verbose or inaccurate (bad). Return as a markdown table."
+Groundedness
+Good: every claim traces back to something actually in Ascend's verified data.
+Bad: sounds plausible but isn't actually sourced from the data.
+Completeness
+Good: comparative queries get proportionate coverage of every side asked about.
+Bad: only answers the easier half of the question and presents it as complete.
+No unlabeled inference
+Good: synthesis or opinion is clearly flagged as IQ's own read, separate from observed fact.
+Bad: inference is blended in and stated as if it were fact.
+Calibrated uncertainty
+Good: thin, old, or conflicting data is flagged as such.
+Bad: a confident answer is given despite thin, old, or conflicting data.
+Sourcing
+Good: claims are traceable to a specific source doc/date so users can verify them.
+Bad: claims are correct but unsourced, so users can't check them.
+Decision-usable structure
+Good: length and structure preserve the real distinctions the user needs to act on.
+Bad: brevity flattens the answer and erases meaningful differences.
+Gut check (overall)
+Good: a VP could act on it and it would hold up if they checked the source data themselves.
+Bad: it looks trustworthy but falls apart the moment someone checks it against the source.
 
-## Your definition of good vs bad (golden-set criteria)
+## Screenshots, links or repo paths (optional if you followed the demo)
 
-_This rubric is the whole point — the judge only scores against what you decide "good" means._
+_…_
 
-> Example: **Good** = faithful to the email, no invented facts, ≤60 words, decision-ready for a CEO. **Bad** = adds claims not in the source, buries the key number, or rambles past 100 words.
-
-## Screenshots — links or repo paths
-
-_Drop image links, or commit images under `01-evaluation-strategy/screenshots/` and reference them._
-
-| What it shows | Screenshot / link |
-|---|---|
-| Eval setup (dataset + judge) | _…_ |
-| Starter dataset rows | _…_ |
-
----
-
-_Self-review: Is your judge from a **different model family** than the generator? Does your "good vs bad" rubric describe the product outcome, not just formatting? Could a teammate re-run this from your notes alone?_
