@@ -1,0 +1,27 @@
+Manually over-rode several rows that I disagreed with resulting in: 13 original failures, 4 of these were overridden leaving us with 8 confirmed failures; 6 Hallucination, 1 fairness, 1 UX Trust
+
+## Audit rows (match by query)
+
+| Query | Judge score | Human override | Trust Metric tag | Failure reason |
+|---|---|---|---|---|
+| What is InsightFlow's pricing for Enterprise? | 0 | — | #HALLUCINATION | Pricing not updated to new price in ground truth  |
+| Summarize the top 3 complaints from DataViz's G2 reviews. | 1 | — | — | · |
+| Does InsightFlow support native SQL export? | 0 | — | #HALLUCINATION | Q asks if native but truth document says it is not  |
+| List the confirmed speakers for SaaStr. | 0 | — | #HALLUCINATION | Some are tentative  |
+| What is the sentiment of the latest TechCrunch article on us? | 0 | — | #HALLUCINATION | Ground truth mentions nothing about UI and pricing  |
+| Give me a bio for Sarah Jenkins, the new VP at DataViz. | 1 | — | — | · |
+| Compare our API rate limits to Competitor Z. | 0 | — | #FAIRNESS | No evidence in ground truth  |
+| Is Competitor X SOC2 compliant? | 1 | — | — | · |
+| When was InsightFlow's last funding round? | 0 | — | #HALLUCINATION | No mention of series B in the ground truth  |
+| Who is the CEO of DataViz? | 0 | 1 (PASS) | — | I think response is good enough to be a pass |
+| Does Competitor Y integrate with HubSpot? | 0 | — | #HALLUCINATION | Intergration is not seamless |
+| What are the primary brand colors for InsightFlow? | 1 | — | — | · |
+| Summarize the lawsuit mentioned in the WSJ about Competitor Z. | 0 | 1 (PASS) | — | Override: legal query  |
+| List the HQ locations for DataViz. | 1 | — | — | · |
+| How many employees does InsightFlow have? | 0 | 1 (PASS) | — | I think response is good enough  |
+| Draft a cold email about our new feature. | 0 | — | #UX_TRUST | Response is too informal  |
+| Does Competitor X offer 24/7 support? | 1 | — | — | · |
+| What database backend does DataViz use? | 1 | — | — | · |
+| Summarize the latest release notes for InsightFlow. | 0 | 1 (PASS) | — | I think response is good enough  |
+| What is the market cap of Competitor Z? | 1 | — | — | · |
+
